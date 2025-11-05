@@ -1,0 +1,162 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Coin Flip Game</title>
+        <style>
+            body {
+                font-family: Arial;
+                background-color: #222;
+                color: white;
+                text-align: center;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .container {
+                background-color: #333;
+                padding: 20px;
+                border-radius: 10px;
+                width: 350px;
+                margin: 40px auto;
+            }
+
+            .profile {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                font-size: 20px;
+                margin-right: 90px;
+            }
+
+            .profile img {
+                width: 38px;
+                height: 40px;
+            }
+
+            .coin {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background-color: gold;
+                color: black;
+                font-size: 24px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px auto;
+                transition: transform 1s;
+            }
+
+            input {
+                width: 80%;
+                padding: 8px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: none;
+                text-align: center;
+                margin: 10px 0;
+                color: #222;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                margin: 10px;
+                cursor: pointer;
+            }
+
+            .head {
+                background-color: dodgerblue;
+                color: white;
+            }
+
+            .tail {
+                background-color: limegreen;
+                color: white;
+            }
+
+            .result {
+                margin-top: 20px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .balance {
+                font-weight: bold;
+                margin-top: 10px;
+                font-size: 18px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 15px;
+                font-size: 14px;
+            }
+
+            th,
+            td {
+                border: 1px solid #555;
+                padding: 6px;
+            }
+
+            th {
+                background-color: #444;
+            }
+
+            td.win {
+                color: lime;
+                font-weight: bold;
+            }
+
+            td.lose {
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h3 class="profile">
+                <img src="https://cdn-icons-png.flaticon.com/512/18114/18114378.png" alt="user icon">
+                <span>Mayank Kharbade</span>
+            </h3>
+
+            <h2>🪙 Coin Flip Game</h2>
+
+            <div class="balance">Your Balance : $1000</div>
+
+            <div class="coin" id="coin">FLIP</div>
+
+            <input type="number" id="betAmount" placeholder="Enter Your Bet Amount"><br>
+
+            <button class="head" onclick="play('HEAD')">Head</button>
+            <button class="tail" onclick="play('TAIL')">Tail</button>
+
+            <div class="result" id="result">Make your choice!</div>
+
+            <h3>Game History</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>You Chooced</th>
+                        <th>Result</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody id="historyUpdate">
+                </tbody>
+            </table>
+        </div>
+
+        <script src="./index.js"></script>
+    </body>
+
+    </html>
